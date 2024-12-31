@@ -1,0 +1,6 @@
+POTENTIAL TABLES FOR MY DATABASE:
+- users: Stores user information (username, email, hashed password).
+- traveled_countries: Links user IDs with selected country codes.
+- country_statistics: Stores continent-wise visit data for each user.
+
+(WRITE FURTHER ON THIS)
