@@ -1,15 +1,36 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+/* FOR THE DARK/LIGHT MODE */
+body.dark-mode {
+    background-color: #1d2439; 
+    color: #f2ddcc;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-body {
-    min-height: 100vh;
-    background: #fff;
-    color: #000000;
+body.dark-mode img.logo {
+    content: url("/static/images/VISITED_WORLD-logo-beige-version.png");
+    width: 250px;
+    height: 100px;
+    transition: content 0.5s ease;
 }
+
+.night-mode-checkbox {
+    display: none;
+}
+
+#night-mode-toggle {
+    font-size: 24px;
+    color: #f2ddcc; /* Icon color for light mode */
+    cursor: pointer;
+    transition: color 0.3s ease; /* Smooth transition for icon color */
+}
+
+.toggle {
+    font-size: 25px;
+}
+
+body.dark-mode #night-mode-toggle {
+    color: #ffffff; /* Icon color for dark mode */
+}
+/* FOR THE DARK/LIGHT MODE */
 
 header {
     position: fixed;
@@ -41,9 +62,11 @@ header {
 }
 
 img.logo {
+    content: url("/static/images/VISITED_WORLD-logo-black-version.png");
     max-width: 100%;
     width: 250px;
     height: 100px;
+    transition: content 0.5s ease;
     background-repeat: no-repeat;
     background-size: contain;
     object-fit: cover;
@@ -58,7 +81,7 @@ img.logo {
 .navbar a {
     position: relative;
     font-size: 18px;
-    color: #000000;
+    color: inherit;
     font-weight: 500;
     text-decoration: none;
     margin-left: 80px;
@@ -75,7 +98,7 @@ img.logo {
     left: 0;
     width: 0;
     height: 2px;
-    background: #000000;
+    background: #f2ddcc;
     transition: .3s;
 }
 
@@ -84,15 +107,17 @@ img.logo {
 }
 
 .navbar a.restricted {
-    transition: none;
-    pointer-events: none; /* Disable clicking */
-    color: #505050; /* Make it visually distinct */
-    cursor: not-allowed; /* Show a "not allowed" cursor */
+    pointer-events: none; /* Disable interaction */
+    cursor: not-allowed; /* Show disabled cursor */
+    color: #999999; /* Dimmed text color */
     text-decoration: none;
+    opacity: 0.6; /* Slightly reduce opacity for better dimming */
+    transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 .navbar a.restricted.active {
-    pointer-events: auto; /* Enable clicking if the user has access (use js logic here to enable) */
-    color: #000000; /* Change to active style */
+    pointer-events: auto; /* Enable interaction */
     cursor: pointer; /* Normal cursor */
+    color: #000000; /* Active link color */
+    opacity: 1; /* Reset opacity */
 }

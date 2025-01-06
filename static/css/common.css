@@ -1,18 +1,21 @@
 /* COMMON STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
 body {
     font-family: 'Roboto Slab', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    min-height: 100vh;
     background-color: #fff;
+    opacity: 1;
     color: #000000;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-}
 /* COMMON STYLES */

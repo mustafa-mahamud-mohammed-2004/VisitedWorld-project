@@ -14,20 +14,30 @@
 <body>
     <header class="header">
          <a href="/" class="logo-link" aria-label="refresh the page">
-            <img src="/static/images/VISITED_WORLD-logo.png" alt="Visited World Logo" class="logo">
+            <img src="/static/images/VISITED_WORLD-logo-beige-version.png" alt="Visited World Logo" class="logo">
         </a>
 
         <nav class="navbar">
             <a href="#">Home</a>
-            <a href="#" class="restricted">Analytics</a>
+            <a href="#" class="restricted" aria-disabled="true">Analytics</a>
             <a href="#">About</a>
         </nav>
+
+        <!-- Night mode toggle -->
+         <div class="toggle-container">
+            <input type="checkbox" id="night-mode-toggle" class="night-mode-checkbox">
+            <label for="night-mode-toggle" class="toggle">
+                <i id="moon-icon" class="fas fa-moon"></i>
+                <i id="sun-icon" class="fa-light fa-sun" display="none"></i>
+            </label>
+         </div>
     </header>
 
 
     <!-- Script for FontAwesome kit -->
     <script src="https://kit.fontawesome.com/492ceb14f6.js" crossorigin="anonymous"></script>
-    <!-- Script for the link of JavaScript file -->
+    <!-- Script for the link of JavaScript files -->
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/darkmode.js') }}"></script>
 </body>
 </html>
