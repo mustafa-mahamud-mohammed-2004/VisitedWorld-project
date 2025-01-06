@@ -7,7 +7,8 @@
 
 body {
     min-height: 100vh;
-    background: rgb(255, 0, 0, 0.536);
+    background: #fff;
+    color: #000000;
 }
 
 header {
@@ -15,7 +16,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 100px;
+    padding: 10px 100px;
     background: transparent;
     display: flex;
     justify-content: space-between;
@@ -23,15 +24,35 @@ header {
     z-index: 100;
 }
 
-a.logo {
-    font-family: 'Bebas neue', serif;
-    font-weight: 700;
-    font-size: 32px;
-    padding: 0;
-    color: #000000;
-    /* font-style: italic; */
-    letter-spacing: 2px;
+.logo-link {
+    max-width: 100%;
+    display: inline-block;
     text-decoration: none;
+}
+
+.logo-link img {
+    display: block;
+}
+
+.logo-link img:hover {
+    opacity: 0.8;
+    cursor: pointer;
+    transition: .3s;
+}
+
+img.logo {
+    max-width: 100%;
+    width: 250px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
 }
 
 .navbar a {
@@ -41,6 +62,10 @@ a.logo {
     font-weight: 500;
     text-decoration: none;
     margin-left: 80px;
+}
+
+.navbar a:first-child {
+    margin-left: 0; /* removes the margin for the first link */
 }
 
 .navbar a::before {
@@ -63,11 +88,11 @@ a.logo {
     pointer-events: none; /* Disable clicking */
     color: #505050; /* Make it visually distinct */
     cursor: not-allowed; /* Show a "not allowed" cursor */
-    text-decoration: none; /* Optional: Remove underline */
+    text-decoration: none;
 }
 
 .navbar a.restricted.active {
-    pointer-events: auto; /* Enable clicking if the user has access */
-    color: rgb(42, 180, 42); /* Change to active style */
+    pointer-events: auto; /* Enable clicking if the user has access (use js logic here to enable) */
+    color: #000000; /* Change to active style */
     cursor: pointer; /* Normal cursor */
 }
