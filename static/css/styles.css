@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: rgb(255, 0, 0, 0.536);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+a.logo {
+    font-family: 'Bebas neue', serif;
+    font-weight: 700;
+    font-size: 32px;
+    padding: 0;
+    color: #000000;
+    /* font-style: italic; */
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: #000000;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 80px;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #000000;
+    transition: .3s;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+
+.navbar a.restricted {
+    transition: none;
+    pointer-events: none; /* Disable clicking */
+    color: #505050; /* Make it visually distinct */
+    cursor: not-allowed; /* Show a "not allowed" cursor */
+    text-decoration: none; /* Optional: Remove underline */
+}
+
+.navbar a.restricted.active {
+    pointer-events: auto; /* Enable clicking if the user has access */
+    color: rgb(42, 180, 42); /* Change to active style */
+    cursor: pointer; /* Normal cursor */
+}
